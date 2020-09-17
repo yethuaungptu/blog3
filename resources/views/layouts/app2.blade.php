@@ -190,16 +190,16 @@
                         </li>
                         <li class="icons dropdown d-none d-md-flex">
                             <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
-                                <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                                <span>{{ Auth::user()->name }}</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
                             </a>
-                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                            {{-- <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li><a href="javascript:void()">English</a></li>
                                         <li><a href="javascript:void()">Dutch</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
                         </li>
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
@@ -209,7 +209,7 @@
                             <div class="drop-down dropdown-profile   dropdown-menu">
                                 <div class="dropdown-content-body">
                                     <ul>
-                                        <li>
+                                        {{-- <li>
                                             <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
                                         </li>
                                         <li>
@@ -219,8 +219,17 @@
                                         <hr class="my-2">
                                         <li>
                                             <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                                        </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        </li> --}}
+                                        {{-- <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li> --}}
+                                        <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                          document.getElementById('logout-form').submit();">
+                                             {{ __('Logout') }}
+                                         </a>
+
+                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                             @csrf
+                                         </form></li>
                                     </ul>
                                 </div>
                             </div>

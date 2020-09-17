@@ -25,6 +25,8 @@
                                 <div class="col-lg-6">
                                     <input type="text" class="form-control" id="val-username" name="name" placeholder="Enter a username..">
                                 </div>
+                                <div class="col-lg-4"></div>
+                            <div class="text-danger">{{$errors->first('name')}}</div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span>
@@ -32,6 +34,8 @@
                                 <div class="col-lg-6">
                                     <input type="text" class="form-control" id="val-email" name="email" placeholder="Your valid email..">
                                 </div>
+                                <div class="col-lg-4"></div>
+                            <div class="text-danger">{{$errors->first('email')}}</div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="val-password">Password <span class="text-danger">*</span>
@@ -39,6 +43,8 @@
                                 <div class="col-lg-6">
                                     <input type="password" class="form-control" id="val-password" name="password" placeholder="Choose a safe one..">
                                 </div>
+                                <div class="col-lg-4"></div>
+                            <div class="text-danger">{{$errors->first('password')}}</div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-lg-8 ml-auto">
